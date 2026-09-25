@@ -37,7 +37,9 @@ A prototype supporting my diploma topic: flood-risk forecasting from meteorologi
 
 ### Small Business Online Ordering Platform
 
-An educational backend for product browsing, carts and order processing. Demonstrates role-based access, server-calculated prices, repeat-safe checkout and a mock payment provider.
+An educational FastAPI backend MVP covering the small-business ordering workflow: customers browse a catalog, manage a cart and place orders; managers and owners manage products and process orders through controlled status transitions. The REST API uses JWT authentication, role-based access and customer ownership checks.
+
+Checkout calculates prices on the server, creates orders transactionally and keeps order-line price snapshots. Per-customer idempotency keys make repeated checkout requests return the same order; a mock payment provider supports the payment flow without real payment processing. Automated tests cover authorization, order rules, checkout retries and rollback on payment failure.
 
 **Tech:** Python · FastAPI · PostgreSQL · SQLAlchemy · JWT · Docker
 
